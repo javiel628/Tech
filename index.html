@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050912">
+  <meta name="description" content="SMILE CHAT BOT — an AI assistant created by SMILE MODZ.">
+  <title>𝐒𝚳𝚰𝐋𝚵 𝐂𝚮𝚨𝐓 𝐁𝚯𝐓</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="/script.js"></script>
+</head>
+<body>
+  <video class="bg-video" autoplay muted loop playsinline aria-hidden="true"><source src="https://files.catbox.moe/n9xs5f.mp4" type="video/mp4"></video>
+  <div class="backdrop" aria-hidden="true"></div>
+  <div class="app-shell">
+    <aside id="sidebar" class="sidebar" aria-label="Conversation sidebar">
+      <div class="side-brand"><span class="brand-mark">S</span><span>SMILE<span class="muted">.AI</span></span><button id="closeSidebar" class="icon-btn mobile-only" aria-label="Close sidebar">✕</button></div>
+      <button id="sideNewChat" class="primary-btn full">＋ New chat</button>
+      <div class="side-label">RECENT CONVERSATIONS</div>
+      <div id="conversationList" class="conversation-list"></div>
+      <div class="side-bottom">
+        <button class="nav-btn" data-panel="settings">⚙ Settings</button>
+        <button class="nav-btn" data-panel="about">ⓘ About</button>
+        <a class="nav-btn" href="https://wa.me/2348020182459" target="_blank" rel="noopener noreferrer">↗ Contact developer</a>
+        <a class="nav-btn" href="https://whatsapp.com/channel/0029Vb794NKBadmdwkPN6i0B" target="_blank" rel="noopener noreferrer">◉ Join WhatsApp channel</a>
+        <button id="clearHistory" class="nav-btn danger">⌫ Clear history</button>
+      </div>
+      <div class="creator-mini"><span class="online-dot"></span> Created by 𝐒𝚳𝚰𝐋𝚵 𝚳𝚯𝐃𝐙</div>
+    </aside>
+    <div id="drawerShade" class="drawer-shade"></div>
+    <main class="main-panel">
+      <header class="topbar">
+        <div class="topbar-left"><button id="openSidebar" class="icon-btn" aria-label="Open sidebar">☰</button><div class="top-brand"><span class="brand-symbol">✳</span><div><div class="brand-name">𝐒𝚳𝚰𝐋𝚵 𝐂𝚮𝚨𝐓 𝐁𝚯𝐓</div><div class="brand-sub"><span id="serviceDot" class="status-dot"></span><span id="serviceStatus">AI service not checked</span></div></div></div></div>
+        <div class="topbar-actions"><button id="newChat" class="outline-btn"><span>＋</span><span class="desktop-label">New chat</span></button><button id="openSettings" class="icon-btn" aria-label="Open settings" title="Settings">⚙</button></div>
+      </header>
+      <section id="chatScroll" class="chat-scroll" aria-live="polite">
+        <div id="welcome" class="welcome">
+          <div class="hero-orb"><span>✳</span><i></i></div>
+          <div class="eyebrow"><span class="online-dot"></span> YOUR PERSONAL AI SPACE</div>
+          <h1>Welcome to <span>SMILE CHAT BOT</span></h1>
+          <p class="welcome-copy">Your AI assistant for questions, coding, learning, creativity, and everyday ideas.</p>
+          <div class="suggestions">
+            <button class="suggestion" data-prompt="Help me explore a question I have: "><span class="suggestion-icon cyan">✧</span><span><b>Ask Anything</b><small>Explore a question or idea</small></span><span class="suggestion-arrow">↗</span></button>
+            <button class="suggestion" data-prompt="Help me understand or write code for: "><span class="suggestion-icon blue">⌘</span><span><b>Code Assistant</b><small>Build, debug, and learn code</small></span><span class="suggestion-arrow">↗</span></button>
+            <button class="suggestion" data-prompt="Help me brainstorm creative ideas for: "><span class="suggestion-icon purple">✎</span><span><b>Creative Studio</b><small>Ideas for projects and content</small></span><span class="suggestion-arrow">↗</span></button>
+            <button class="suggestion" data-prompt="Teach me about this topic step by step: "><span class="suggestion-icon green">◎</span><span><b>Learn Something</b><small>Understand a topic clearly</small></span><span class="suggestion-arrow">↗</span></button>
+          </div>
+          <div class="welcome-note">Ask a question to start a new conversation.</div>
+        </div>
+        <div id="messages" class="messages"></div>
+        <div id="pending" class="pending hidden"><div class="avatar ai-avatar">✳</div><div class="pending-bubble"><span class="typing-dots"><i></i><i></i><i></i></span><span>SMILE BOT is thinking...</span></div></div>
+      </section>
+      <div class="composer-wrap"><form id="composer" class="composer"><textarea id="messageInput" rows="1" maxlength="6000" placeholder="Message SMILE CHAT BOT..." aria-label="Your message"></textarea><button id="sendButton" class="send-btn" type="submit" aria-label="Send message" disabled>↑</button></form><div class="composer-foot"><span>AI can make mistakes. Check important information.</span><span>POWERED BY YOUR SUPPLIED AI API</span></div></div>
+      <footer class="app-footer">© 2026 𝐒𝚳𝚰𝐋𝚵 𝐂𝚮𝚨𝐓 𝐁𝚯𝐓 — Created by 𝐒𝚳𝚰𝐋𝚵 𝚳𝚯𝐃𝐙</footer>
+    </main>
+  </div>
+  <div id="panelShade" class="modal-shade hidden"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="panelTitle"><div class="modal-head"><h2 id="panelTitle">Settings</h2><button id="closePanel" class="icon-btn" aria-label="Close panel">✕</button></div><div id="panelContent" class="modal-content"></div></section></div>
+  <div id="toast" class="toast" role="status"></div>
+</body>
+</html>
